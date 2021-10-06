@@ -18,3 +18,4 @@ target/classes/com/edu/uptc/sfII/peliculas/PeliculasApplication.class
 target/classes/com/edu/uptc/sfII/peliculas/controller/ControllerPeliculas.class
 target/test-classes/com/edu/uptc/sfII/peliculas/PeliculasApplicationTests.class
 target/classes/com/edu/uptc/sfII/peliculas/controller/ControllerPeliculas.class
+.idea
