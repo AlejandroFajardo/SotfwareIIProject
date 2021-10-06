@@ -18,4 +18,9 @@ public class ControllerPeliculas {
     public String listadoPeliculas(){
         return "cartelera";
     }
+
+    @RequestMapping("/home")
+    public String home(){
+        return "home";
+    }
 }
