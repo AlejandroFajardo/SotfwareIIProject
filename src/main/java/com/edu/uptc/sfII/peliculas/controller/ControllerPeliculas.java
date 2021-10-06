@@ -16,6 +16,6 @@ public class ControllerPeliculas {
     
     @RequestMapping("/")
     public String listadoPeliculas(){
-        return "prueba";
+        return "cartelera";
     }
 }
