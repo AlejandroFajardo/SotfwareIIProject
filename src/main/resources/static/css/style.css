@@ -1,0 +1,10 @@
+.navbar{
+    background-color: #275BAE;
+    padding: 15px;
+}
+
+.nav-link{
+    font-family: "Raleway ExtraBold";
+    margin-right: 1.3rem;
+    font-size: 1.12rem;
+}
