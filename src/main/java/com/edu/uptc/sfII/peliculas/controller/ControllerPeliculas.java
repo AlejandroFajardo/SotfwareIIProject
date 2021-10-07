@@ -20,4 +20,10 @@ public class ControllerPeliculas {
     public String home(){
         return "home";
     }
+
+
+    @RequestMapping("/admin/add-movie")
+    public String addMovie(){
+        return "add-movie";
+    }
 }
