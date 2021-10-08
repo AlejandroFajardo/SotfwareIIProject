@@ -20,30 +20,32 @@
 
 .form-control {
     background-color: rgba(10,61,90,0.14);
-    border-color: rgba(10,61,90,0.3);
-    color: #0A3D5A;
 }
 
 .form-control:focus {
-    background-color: rgba(10,61,90,0.18);
-    color: #0A3D5A;
-    border-color: #0A3D5A;
-    box-shadow: inset 0 1px 1px rgba(10,61,90, 0.075), 0 0 8px rgba(10,61,90, 0.6);
-}
-
-.form-select{
-    background-color: rgba(10,61,90,0.14);
-    border-color: rgba(10,61,90,0.3);
-    color: #0A3D5A;
-}
-
-.form-select:focus{
-    background-color: rgba(10,61,90,0.18);
-    color: #0A3D5A;
-    border-color: #0A3D5A;
-    box-shadow: inset 0 1px 1px rgba(10,61,90, 0.075), 0 0 8px rgba(10,61,90, 0.6);
+    background-color: rgba(10,61,90,0.1);
+    border-color: #275BAE;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(31, 94, 174, 0.6);
 }
 
 #a {
-    background-color: red;
+    background-color: blue;
+}
+.peliculas-destacadas .card{
+    height: 100%;
+}
+.peliculas-destacadas .card-img-top{
+    height: 450px;
+    object-fit: cover;
+}
+.peliculas-destacadas .card-title{
+    text-align: center
+}
+.peliculas-destacadas .card-genero{
+    font-size: 14px;
+    text-align: center
+}
+.peliculas-destacadas .card-categoria{
+    font-size: 9px;
+    text-align: center
 }
