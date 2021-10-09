@@ -7,6 +7,7 @@ package com.edu.uptc.sfII.peliculas.services;
 import com.edu.uptc.sfII.peliculas.domain.Pelicula;
 import com.edu.uptc.sfII.peliculas.repository.PeliculaRepository;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,4 +23,7 @@ public class PeliculaService {
         return peliculaRepository.findAll();
     }
     
+    public Optional<Pelicula> getPeliculaPorNombre(String nombre){
+        return peliculaRepository.findById(nombre);
+    }
 }

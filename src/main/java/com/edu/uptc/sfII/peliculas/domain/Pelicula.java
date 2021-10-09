@@ -5,16 +5,19 @@
 package com.edu.uptc.sfII.peliculas.domain;
 
 import java.sql.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "peliculas")
 public class Pelicula {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private String title;
     private String cast;
     private String synopsis;
@@ -22,6 +25,7 @@ public class Pelicula {
     private String language;
     private Date premiereDate;
     private String contentRate;
+    @Column(name = "image_url")
     private String urlCaratula;
 
     public Pelicula() {

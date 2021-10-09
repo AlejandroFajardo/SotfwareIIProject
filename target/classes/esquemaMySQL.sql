@@ -20,3 +20,6 @@ INSERT INTO `peliculas` (`title`, `cast`, `synopsis`, `duration`, `language`, `p
 ('Tus Ojos Dicen', 'Yuriko Yoshitaka, Ryûsei Yokohama, Kyôsuke Yabe.', 'Rui es un excombatiente que fue arrestado por involucrarse con yakusa, la mafia japonesa. Después de cumplir su condena en prisión, intenta vivir su vida correctamente. En su nuevo trabajo en un estacionamiento, conoce a Akari, una joven ciega, alegre y positiva que perdió la visión y a sus padres en un accidente automovilístico. Akari solía visitar a un amigo que trabajaba antes que Rui en el estacionamiento. Sin saber que su amigo dejó su trabajo, termina conociendo a Rui. Las visitas de Akari comienzan a despertar a Rui, dándole un mayor significado a su vida. Su armonía crece, pero el extraño destino mostrará cuán profundamente conectados están sus pasados.', 125, 'subtitulos', '2021-10-21', 'TBC', 'https://assets.cinemark-core.com/5db771be04daec00076df3f5/vista/movies/6157058ee812df000944f602/common/tus-ojos-dicen-86536-1633093034790.jpg');
 COMMIT;
 
+ALTER TABLE `peliculas`
+  ADD PRIMARY KEY (`title`);
+COMMIT;

@@ -2,7 +2,9 @@
     background-color: #275BAE;
     padding: 15px;
 }
-
+#idioma{
+   text-transform: capitalize;
+}
 .nav-link {
     font-family: "Helvetica";
     margin-right: 1.3rem;
