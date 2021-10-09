@@ -6,7 +6,9 @@ package com.edu.uptc.sfII.peliculas.services;
 
 import com.edu.uptc.sfII.peliculas.domain.Pelicula;
 import com.edu.uptc.sfII.peliculas.repository.PeliculaRepository;
+import java.sql.Date;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,4 +24,12 @@ public class PeliculaService {
         return peliculaRepository.findAll();
     }
     
+    public Optional<Pelicula> getPeliculaPorNombre(Integer id){
+        return peliculaRepository.findById(id);
+    }
+    
+    public void insertPelicula(String title, String cast, String synopsis,
+    int duration, String language, Date premiereDate, String contentRate, String urlCaratula){
+        this.peliculaRepository.save(new Pelicula(title, cast, synopsis, duration, language, premiereDate, contentRate, "/img/car.png"));
+    }
 }

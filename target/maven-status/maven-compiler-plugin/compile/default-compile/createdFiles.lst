@@ -1,1 +1,5 @@
+com\edu\uptc\sfII\peliculas\repository\PeliculaRepository.class
+com\edu\uptc\sfII\peliculas\domain\Pelicula.class
 com\edu\uptc\sfII\peliculas\PeliculasApplication.class
+com\edu\uptc\sfII\peliculas\controller\ControllerPeliculas.class
+com\edu\uptc\sfII\peliculas\services\PeliculaService.class
