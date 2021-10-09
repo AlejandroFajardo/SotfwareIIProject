@@ -6,6 +6,10 @@ package com.edu.uptc.sfII.peliculas.controller;
 
 import com.edu.uptc.sfII.peliculas.domain.Pelicula;
 import com.edu.uptc.sfII.peliculas.services.PeliculaService;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.image.ImageObserver;
+import java.awt.image.ImageProducer;
 import java.sql.Date;
 import java.util.List;
 import org.springframework.stereotype.Controller;
@@ -30,7 +34,7 @@ public class ControllerPeliculas {
         return "cartelera";
     }
 
-    @RequestMapping("/home")
+    @RequestMapping("/")
     public String home(){
         return "home";
     }
@@ -58,10 +62,9 @@ public class ControllerPeliculas {
     }
 
     @RequestMapping("/eliminar_pelicula")
-    public String deleteMovieById(@RequestParam("q") int id, Model model){
+    public String deleteMovieById(@RequestParam("id") int id, Model model){
         peliculaService.deleteById(id);
-        List<Pelicula> cartelera = peliculaService.buscarDestacados();
-        model.addAttribute("peliculas", cartelera);
+        home();
         return "cartelera";
     }
 

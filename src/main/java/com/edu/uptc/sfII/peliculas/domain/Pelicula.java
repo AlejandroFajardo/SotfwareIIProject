@@ -17,7 +17,7 @@ import javax.persistence.Table;
 public class Pelicula {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idPelicula;
     private String title;
     private String cast;
