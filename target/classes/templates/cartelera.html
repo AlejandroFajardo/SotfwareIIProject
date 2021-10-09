@@ -72,7 +72,7 @@
         </div>
 
         <div class="mt-4" style="text-align:center">
-            <a class="btn btn-primary" href="#" role="button">Agregar Pelicula</a>
+            <a class="btn btn-primary" th:href="@{/add-movie}" role="button">Agregar Pelicula</a>
             <a class="btn btn-primary" href="#" role="button">Elimnar pelicula(s)</a>
 
         </div>
@@ -98,7 +98,8 @@
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title" th:text="${pelicula.title}"></h5>
                             <p class="card-text" th:text="${pelicula.synopsis}"></p>
-                            <div class="mt-auto text-center">
+                            <div class="mt-auto text-center mx-auto">
+                                <p class="card-text text-danger text-center" th:text="'Clasificación ' + ${pelicula.contentRate}"></p>
                                 <p class="card-text text-center" th:text="${pelicula.duration} + ' Min'"></p>
                                 <p class="card-text bg-dark text-white fit-content mx-auto" id="idioma" th:text="'&nbsp;&nbsp;&nbsp;' + ${pelicula.language} + '&nbsp;&nbsp;&nbsp;'"></p>
                                 <a href="#" class="btn btn-primary mt-auto fit-content mx-auto">Agregar al carrito</a>

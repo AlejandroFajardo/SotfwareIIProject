@@ -6,10 +6,12 @@ package com.edu.uptc.sfII.peliculas.controller;
 
 import com.edu.uptc.sfII.peliculas.domain.Pelicula;
 import com.edu.uptc.sfII.peliculas.services.PeliculaService;
+import java.sql.Date;
 import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -34,8 +36,17 @@ public class ControllerPeliculas {
     }
 
 
-    @RequestMapping("/admin/add-movie")
+    @RequestMapping("/add-movie")
     public String addMovie(){
         return "add-movie";
+    }
+    
+    @RequestMapping("/insert-movie")
+    public String insertMovie( @RequestParam("titulo") String title, @RequestParam("reparto") String cast, @RequestParam("sinopsis") String synopsis,
+    @RequestParam("duracion") int duration, @RequestParam("idioma") String language, @RequestParam("fecha") Date premiereDate, @RequestParam("clasificacion") String contentRate, @RequestParam("myFile") String urlCaratula, Model model){
+        peliculaService.insertPelicula(title, cast, synopsis, duration, language, premiereDate, contentRate, urlCaratula);
+        List<Pelicula> cartelera = peliculaService.buscarDestacados();
+        model.addAttribute("peliculas", cartelera);
+        return "cartelera";
     }
 }

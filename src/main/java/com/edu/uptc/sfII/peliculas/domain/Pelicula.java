@@ -17,7 +17,8 @@ import javax.persistence.Table;
 public class Pelicula {
 
     @Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idPelicula;
     private String title;
     private String cast;
     private String synopsis;
@@ -31,6 +32,25 @@ public class Pelicula {
     public Pelicula() {
     }
 
+    public Pelicula(String title, String cast, String synopsis, int duration, String language, Date premiereDate, String contentRate, String urlCaratula) {
+        this.title = title;
+        this.cast = cast;
+        this.synopsis = synopsis;
+        this.duration = duration;
+        this.language = language;
+        this.premiereDate = premiereDate;
+        this.contentRate = contentRate;
+        this.urlCaratula = urlCaratula;
+    }
+    
+    public int getIdPelicula() {
+        return idPelicula;
+    }
+
+    public void setIdPelicula(int idPelicula) {
+        this.idPelicula = idPelicula;
+    }
+    
     public String getTitle() {
         return title;
     }
