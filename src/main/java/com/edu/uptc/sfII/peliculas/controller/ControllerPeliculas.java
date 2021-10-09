@@ -12,9 +12,12 @@ import java.awt.image.ImageObserver;
 import java.awt.image.ImageProducer;
 import java.sql.Date;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
@@ -47,8 +50,8 @@ public class ControllerPeliculas {
     
     @RequestMapping("/insert-movie")
     public String insertMovie( @RequestParam("titulo") String title, @RequestParam("reparto") String cast, @RequestParam("sinopsis") String synopsis,
-    @RequestParam("duracion") int duration, @RequestParam("idioma") String language, @RequestParam("fecha") Date premiereDate, @RequestParam("clasificacion") String contentRate, @RequestParam("myFile") String urlCaratula, Model model){
-        peliculaService.insertPelicula(title, cast, synopsis, duration, language, premiereDate, contentRate, urlCaratula);
+    @RequestParam("duracion") int duration, @RequestParam("idioma") String language, @RequestParam("fecha") Date premiereDate, @RequestParam("genero") String genre, @RequestParam("clasificacion") String contentRate, @RequestParam("myFile") String urlCaratula, Model model){
+        peliculaService.insertPelicula(title, cast, synopsis, duration, language, premiereDate, genre, contentRate, urlCaratula);
         List<Pelicula> cartelera = peliculaService.buscarDestacados();
         model.addAttribute("peliculas", cartelera);
         return "cartelera";
@@ -66,7 +69,20 @@ public class ControllerPeliculas {
         peliculaService.deleteById(id);
         return "cartelera";
     }
+    
+    @RequestMapping("/search_pelicula_genero")
+    public String buscarPeliculaByGenre(@RequestParam("genero") String genero, Model model){
+        List<Pelicula> result = peliculaService.searchPeliculaByGenre(genero);
+        model.addAttribute("peliculas", result);
+        return "cartelera";
+    }
 
+    @RequestMapping("/search_pelicula_categoria")
+    public String buscarPeliculaByRate(@RequestParam("categoria") String categoria, Model model){
+        List<Pelicula> result = peliculaService.searchPeliculaByRate(categoria);
+        model.addAttribute("peliculas", result);
+        return "cartelera";
+    }
 }
 
 

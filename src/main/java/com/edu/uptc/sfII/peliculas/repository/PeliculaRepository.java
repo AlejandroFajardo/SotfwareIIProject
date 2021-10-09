@@ -27,4 +27,9 @@ public interface PeliculaRepository extends JpaRepository<Pelicula, Integer> {
     @Query("DELETE FROM Pelicula p WHERE p.idPelicula = ?1")
     public void deleteByIdPelicula(int id);
 
+    public List<Pelicula> findByGenre(String genre);
+
+    @Query("FROM Pelicula p WHERE p.contentRate = ?1")
+    public List<Pelicula> findByContentRate(String categoria);
+
 }

@@ -25,6 +25,7 @@ public class Pelicula {
     private int duration;
     private String language;
     private Date premiereDate;
+    private String genre;
     private String contentRate;
     @Column(name = "image_url")
     private String urlCaratula;
@@ -32,13 +33,14 @@ public class Pelicula {
     public Pelicula() {
     }
 
-    public Pelicula(String title, String cast, String synopsis, int duration, String language, Date premiereDate, String contentRate, String urlCaratula) {
+    public Pelicula(String title, String cast, String synopsis, int duration, String language, Date premiereDate, String genre, String contentRate, String urlCaratula) {
         this.title = title;
         this.cast = cast;
         this.synopsis = synopsis;
         this.duration = duration;
         this.language = language;
         this.premiereDate = premiereDate;
+        this.genre = genre;
         this.contentRate = contentRate;
         this.urlCaratula = urlCaratula;
     }

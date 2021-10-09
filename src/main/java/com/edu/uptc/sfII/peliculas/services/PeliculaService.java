@@ -29,8 +29,8 @@ public class PeliculaService {
     }
     
     public void insertPelicula(String title, String cast, String synopsis,
-    int duration, String language, Date premiereDate, String contentRate, String urlCaratula){
-        this.peliculaRepository.save(new Pelicula(title, cast, synopsis, duration, language, premiereDate, contentRate, "/img/car.png"));
+    int duration, String language, Date premiereDate, String genre, String contentRate,  String urlCaratula){
+        this.peliculaRepository.save(new Pelicula(title, cast, synopsis, duration, language, premiereDate, genre, contentRate, "/img/car.png"));
     }
     
     //Buscar pelicula por titulo
@@ -40,6 +40,14 @@ public class PeliculaService {
 
     public void deleteById(int id){
         peliculaRepository.deleteByIdPelicula(id);
+    }
+
+    public List<Pelicula> searchPeliculaByGenre(String genre) {
+        return peliculaRepository.findByGenre(genre);
+    }
+
+    public List<Pelicula> searchPeliculaByRate(String categoria) {
+        return peliculaRepository.findByContentRate(categoria);
     }
 
 }

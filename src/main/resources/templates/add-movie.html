@@ -44,7 +44,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <h4 class="text-center mb-4 fw-light">Agregar película</h4>
-                                    <form  th:action="@{/insert-movie(titulo, reparto, sinopsis, duracion, idioma, clasificacion, fecha, myFile)}">
+                                    <form  th:action="@{/insert-movie(titulo, reparto, sinopsis, duracion, idioma, clasificacion, fecha, genero, myFile)}">
                                         <div class="mb-3">
                                             <label for="titulo" class="form-label fw-light">Titulo</label>
                                             <input type="text" class="form-control" name="titulo" >
@@ -84,12 +84,22 @@
                                             <label for="clasificacion" class="form-label fw-light">Clasificación</label>
                                             <select class="form-control" name="clasificacion">
                                                 <option>todos</option>
-                                                <option>7+</option>
-                                                <option>12+</option>
-                                                <option>15+</option>
-                                                <option>18+</option>
+                                                <option>mayores de 7</option>
+                                                <option>mayores de 12</option>
+                                                <option>mayores de 15</option>
+                                                <option>mayores de 18</option>
                                                 <option>X</option>
                                                 <option>TBC</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="genero" class="form-label fw-light">Genero</label>
+                                            <select class="form-control" name="genero">
+                                                <option>animada</option>
+                                                <option>accion</option>
+                                                <option>drama</option>
+                                                <option>comedia</option>
+                                                <option>aventura</option>
                                             </select>
                                         </div>
                                         <div>
