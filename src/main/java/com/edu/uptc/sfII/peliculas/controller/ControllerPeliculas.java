@@ -34,7 +34,7 @@ public class ControllerPeliculas {
         return "cartelera";
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/home")
     public String home(){
         return "home";
     }
@@ -64,7 +64,6 @@ public class ControllerPeliculas {
     @RequestMapping("/eliminar_pelicula")
     public String deleteMovieById(@RequestParam("id") int id, Model model){
         peliculaService.deleteById(id);
-        home();
         return "cartelera";
     }
 
