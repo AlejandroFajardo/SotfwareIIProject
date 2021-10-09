@@ -18,10 +18,8 @@ public class PeliculaService {
         this.peliculaRepository = peliculaRepository;
     }
     
-    
     public List<Pelicula> buscarDestacados(){
         return peliculaRepository.findAll();
     }
     
-            
 }

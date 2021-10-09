@@ -4,15 +4,27 @@
  */
 package com.edu.uptc.sfII.peliculas.controller;
 
+import com.edu.uptc.sfII.peliculas.domain.Pelicula;
+import com.edu.uptc.sfII.peliculas.services.PeliculaService;
+import java.util.List;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
 public class ControllerPeliculas {
     
+    private final PeliculaService peliculaService;
+
+    public ControllerPeliculas(PeliculaService peliculaService) {
+        this.peliculaService = peliculaService;
+    }
+    
     @RequestMapping("/")
-    public String listadoPeliculas(){
+    public String listadoPeliculas(Model model){
+        List<Pelicula> cartelera = peliculaService.buscarDestacados();
+        model.addAttribute("peliculas", cartelera);
         return "cartelera";
     }
 
