@@ -4,70 +4,83 @@
  */
 package com.edu.uptc.sfII.peliculas.domain;
 
-import java.util.Date;
+import java.sql.Date;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Pelicula {
+
     @Id
-    private String titulo;
-    private String reparto;
-    private String sinopsis;
-    private int duracion;
-    private String idioma;
-    private Date fechaEstreno;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String title;
+    private String cast;
+    private String synopsis;
+    private int duration;
+    private String language;
+    private Date premiereDate;
+    private String contentRate;
     private String urlCaratula;
 
     public Pelicula() {
     }
 
-    public String getTitulo() {
-        return titulo;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getReparto() {
-        return reparto;
+    public String getCast() {
+        return cast;
     }
 
-    public void setReparto(String reparto) {
-        this.reparto = reparto;
+    public void setCast(String cast) {
+        this.cast = cast;
     }
 
-    public String getSinopsis() {
-        return sinopsis;
+    public String getSynopsis() {
+        return synopsis;
     }
 
-    public void setSinopsis(String sinopsis) {
-        this.sinopsis = sinopsis;
+    public void setSynopsis(String synopsis) {
+        this.synopsis = synopsis;
     }
 
-    public int getDuracion() {
-        return duracion;
+    public int getDuration() {
+        return duration;
     }
 
-    public void setDuracion(int duracion) {
-        this.duracion = duracion;
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 
-    public String getIdioma() {
-        return idioma;
+    public String getLanguage() {
+        return language;
     }
 
-    public void setIdioma(String idioma) {
-        this.idioma = idioma;
+    public void setLanguage(String language) {
+        this.language = language;
     }
 
-    public Date getFechaEstreno() {
-        return fechaEstreno;
+    public Date getPremiereDate() {
+        return premiereDate;
     }
 
-    public void setFechaEstreno(Date fechaEstreno) {
-        this.fechaEstreno = fechaEstreno;
+    public void setPremiereDate(Date premiereDate) {
+        this.premiereDate = premiereDate;
+    }
+
+    public String getContentRate() {
+        return contentRate;
+    }
+
+    public void setContentRate(String contentRate) {
+        this.contentRate = contentRate;
     }
 
     public String getUrlCaratula() {
@@ -77,4 +90,6 @@ public class Pelicula {
     public void setUrlCaratula(String urlCaratula) {
         this.urlCaratula = urlCaratula;
     }
+
+    
 }
