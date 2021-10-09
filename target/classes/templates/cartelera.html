@@ -4,110 +4,106 @@
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link href="/css/style.css" rel="stylesheet" >
+                <!-- Bootstrap CSS -->
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+                    <link href="/css/style.css" rel="stylesheet" >
 
-        <title>Cartelera</title>
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #275BAE;">
-            <div class="container-fluid">
-                <img src="/img/ecopolis.png" alt="" width="70" height="50">
-                <a class="navbar-brand" href="#">Ecopolis Cinema 3D</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto">
-                        <!-- <li class="nav-item">
-                             <a class="nav-link active" aria-current="page" href="#">Home</a>
-                         </li>-->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Cartelera</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Boletería</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled">Comidas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="navbar-brand" href="#">
-                                <img src="/img/car.png" alt="" width="30" height="24">
-                            </a>
-                            <a class="navbar-brand" href="#">
-                                <img src="/img/user.png" alt="" width="30" height="24">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div style="text-align:center" class="mt-3 mb-4">
-            <h2>Cartelera con las películas del momento</h2>
-        </div>
-        <div class="container-fluid row">
-            <div class="input-group">
-                <p class="mx-3 ">Buscar por nombre: </p>
-                <input type="search" class="form-control rounded" placeholder="Matrix, Jon Wick..." aria-label="Search"
-                       aria-describedby="search-addon" />
-                <button type="button" class="btn btn-outline-primary">Buscar</button>
-                <select class="form-control mx-3">
-                    <option>Categoria 1</option>
-                    <option>Categoria 2</option>
-                    <option>Categoria 3</option>
-                </select>
-                <select class="form-control mx-3">
-                    <option>Genero 1</option>
-                    <option>Genero 2</option>
-                    <option>Genero 3</option>
-                </select>
-            </div> 
-        </div>
-
-        <div class="mt-4" style="text-align:center">
-            <a class="btn btn-primary" th:href="@{/add-movie}" role="button">Agregar Pelicula</a>
-            <a class="btn btn-primary" href="#" role="button">Elimnar pelicula(s)</a>
-
-        </div>
-
-        <!--<div class="container mt-4 peliculas-destacadas">
-            <div class="card" style="width: 18rem;">
-                <div class="form-check">
-                    <input class="form-check-input mx-auto" type="checkbox" value="" id="flexCheckDefault">                </div>
-                <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2021/04/poster-shang-chi-leyenda-diez-anillos-2303799.jpg?itok=bA7yKza5" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h6 class="card-title">Título de la película</h6>
-                    <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-        <!--            <p class="card-genero">Genero</p>
-                    <p class="card-categoria">Categoria</p>
-                </div>
-            </div>
-        </div>-->
-        <div class="container col-md-12">
-            <div class="row col-md-12 ">
-                <div th:each="pelicula:${peliculas}" class="col-md-3 my-4 d-flex align-items-stretch">
-                    <div class="card" style="width: 18rem;">
-                        <img th:src="${pelicula.urlCaratula}" class="card-img-top" alt="...">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title" th:text="${pelicula.title}"></h5>
-                            <p class="card-text" th:text="${pelicula.synopsis}"></p>
-                            <div class="mt-auto text-center mx-auto">
-                                <p class="card-text text-danger text-center" th:text="'Clasificación ' + ${pelicula.contentRate}"></p>
-                                <p class="card-text text-center" th:text="${pelicula.duration} + ' Min'"></p>
-                                <p class="card-text bg-dark text-white fit-content mx-auto" id="idioma" th:text="'&nbsp;&nbsp;&nbsp;' + ${pelicula.language} + '&nbsp;&nbsp;&nbsp;'"></p>
-                                <a href="#" class="btn btn-primary mt-auto fit-content mx-auto">Agregar al carrito</a>
+                        <title>Cartelera</title>
+                        </head>
+                        <body>
+                            <nav class="navbar navbar-expand-lg">
+                                <div class="container">
+                                    <a class="navbar-brand" href="/">
+                                        <img src="/img/ecopolis.png" alt="" width="70" height="50">
+                                    </a>
+                                </div>
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" aria-current="page" href="#">Cartelera</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="#">Boleteria</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="#">Comidas</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="#">Nosotros</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <img src="/img/car.png" alt="" width="30" height="24">
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <img src="/img/user.png" alt="" width="30" height="24">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div style="text-align:center" class="mt-3 mb-4">
+                                <h2>Cartelera con las películas del momento</h2>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+                            <div class="container-fluid row">
+                                <div class="input-group">
+                                    <p class="mx-3 ">Buscar por nombre: </p>
+                                    <form class="d-flex" th:action="@{/search_pelicula(q)}">
+                                        <input class="form-control me-2" type="search" th:placeholder="${param.q}" name="q" aria-label="Search" autofocus="autofocus">
+                                        <button type="button" class="btn btn-outline-primary">Buscar</button>
+                                    </form>
+                                    <select class="form-control mx-3">
+                                        <option>Categoria 1</option>
+                                        <option>Categoria 2</option>
+                                        <option>Categoria 3</option>
+                                    </select>
+                                    <select class="form-control mx-3">
+                                        <option>Genero 1</option>
+                                        <option>Genero 2</option>
+                                        <option>Genero 3</option>
+                                    </select>
+                                </div> 
+                            </div>
+
+                            <div class="mt-4" style="text-align:center">
+                                <a class="btn btn-primary" th:href="@{/add-movie}" role="button">Agregar Pelicula</a>
+                                <a class="btn btn-primary" href="#" role="button">Elimnar pelicula(s)</a>
+
+                            </div>
+
+                            <!--<div class="container mt-4 peliculas-destacadas">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="form-check">
+                                        <input class="form-check-input mx-auto" type="checkbox" value="" id="flexCheckDefault">                </div>
+                                    <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2021/04/poster-shang-chi-leyenda-diez-anillos-2303799.jpg?itok=bA7yKza5" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Título de la película</h6>
+                            <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+                            <!--            <p class="card-genero">Genero</p>
+                                        <p class="card-categoria">Categoria</p>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <div class="container col-md-12">
+                                <div class="row col-md-12 ">
+                                    <div th:each="pelicula:${peliculas}" class="col-md-3 my-4 d-flex align-items-stretch">
+                                        <div class="card" style="width: 18rem;">
+                                            <img th:src="${pelicula.urlCaratula}" class="card-img-top" alt="...">
+                                                <div class="card-body d-flex flex-column">
+                                                    <h5 class="card-title" th:text="${pelicula.title}"></h5>
+                                                    <p class="card-text" th:text="${pelicula.synopsis}"></p>
+                                                    <div class="mt-auto text-center mx-auto">
+                                                        <p class="card-text text-danger text-center" th:text="'Clasificación ' + ${pelicula.contentRate}"></p>
+                                                        <p class="card-text text-center" th:text="${pelicula.duration} + ' Min'"></p>
+                                                        <p class="card-text bg-dark text-white fit-content mx-auto" id="idioma" th:text="'&nbsp;&nbsp;&nbsp;' + ${pelicula.language} + '&nbsp;&nbsp;&nbsp;'"></p>
+                                                        <a href="#" class="btn btn-primary mt-auto fit-content mx-auto">Agregar al carrito</a>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </body>
+                        </html>

@@ -32,4 +32,9 @@ public class PeliculaService {
     int duration, String language, Date premiereDate, String contentRate, String urlCaratula){
         this.peliculaRepository.save(new Pelicula(title, cast, synopsis, duration, language, premiereDate, contentRate, "/img/car.png"));
     }
+    
+    //Buscar pelicula por titulo
+    public List<Pelicula> searchPeliculaByTitle(String title){
+        return peliculaRepository.findByTitleContaining(title);
+    }
 }

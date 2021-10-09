@@ -1,6 +1,7 @@
 package com.edu.uptc.sfII.peliculas.repository;
 
 import com.edu.uptc.sfII.peliculas.domain.Pelicula;
+import java.util.List;
 import javax.persistence.Entity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -16,5 +17,6 @@ public interface PeliculaRepository extends JpaRepository<Pelicula, Integer> {
         return pelicula;
     }*/
     
-    
+   //Buscar peliculas por nombre
+    public List<Pelicula> findByTitleContaining(String title);
 }
