@@ -4,8 +4,10 @@ import com.edu.uptc.sfII.peliculas.domain.Pelicula;
 import java.util.List;
 import javax.persistence.Entity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public interface PeliculaRepository extends JpaRepository<Pelicula, Integer> {
@@ -19,4 +21,10 @@ public interface PeliculaRepository extends JpaRepository<Pelicula, Integer> {
     
    //Buscar peliculas por nombre
     public List<Pelicula> findByTitleContaining(String title);
+
+    @Transactional
+    @Modifying
+    @Query("DELETE FROM Pelicula p WHERE p.idPelicula = ?1")
+    public void deleteByIdPelicula(int id);
+
 }

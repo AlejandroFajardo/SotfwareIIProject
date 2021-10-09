@@ -80,7 +80,7 @@
                                     <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2021/04/poster-shang-chi-leyenda-diez-anillos-2303799.jpg?itok=bA7yKza5" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h6 class="card-title">Título de la película</h6>
-                            <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
                             <!--            <p class="card-genero">Genero</p>
                                         <p class="card-categoria">Categoria</p>
                                     </div>
@@ -89,7 +89,7 @@
                             <div class="container col-md-12">
                                 <div class="row col-md-12 ">
                                     <div th:each="pelicula:${peliculas}" class="col-md-3 my-4 d-flex align-items-stretch">
-                                        <div class="card" style="width: 18rem;">
+                                        <div class="card" style="width: 18rem;" th:name="${pelicula.idPelicula}">
                                             <img th:src="${pelicula.urlCaratula}" class="card-img-top" alt="...">
                                                 <div class="card-body d-flex flex-column">
                                                     <h5 class="card-title" th:text="${pelicula.title}"></h5>
@@ -98,7 +98,7 @@
                                                         <p class="card-text text-danger text-center" th:text="'Clasificación ' + ${pelicula.contentRate}"></p>
                                                         <p class="card-text text-center" th:text="${pelicula.duration} + ' Min'"></p>
                                                         <p class="card-text bg-dark text-white fit-content mx-auto" id="idioma" th:text="'&nbsp;&nbsp;&nbsp;' + ${pelicula.language} + '&nbsp;&nbsp;&nbsp;'"></p>
-                                                        <a href="#" class="btn btn-primary mt-auto fit-content mx-auto">Agregar al carrito</a>
+                                                        <a th:href="@{/eliminar_pelicula(q=${pelicula.idPelicula})}" href="#" class="btn btn-primary mt-auto fit-content mx-auto">Eliminar</a>
                                                     </div>
                                                 </div>
                                         </div>

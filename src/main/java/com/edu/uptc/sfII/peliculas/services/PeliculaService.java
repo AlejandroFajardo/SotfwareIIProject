@@ -37,4 +37,9 @@ public class PeliculaService {
     public List<Pelicula> searchPeliculaByTitle(String title){
         return peliculaRepository.findByTitleContaining(title);
     }
+
+    public void deleteById(int id){
+        peliculaRepository.deleteByIdPelicula(id);
+    }
+
 }

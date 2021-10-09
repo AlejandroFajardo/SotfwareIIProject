@@ -56,4 +56,15 @@ public class ControllerPeliculas {
         model.addAttribute("peliculas", result);
         return "cartelera";
     }
+
+    @RequestMapping("/eliminar_pelicula")
+    public String deleteMovieById(@RequestParam("q") int id, Model model){
+        peliculaService.deleteById(id);
+        List<Pelicula> cartelera = peliculaService.buscarDestacados();
+        model.addAttribute("peliculas", cartelera);
+        return "cartelera";
+    }
+
 }
+
+
