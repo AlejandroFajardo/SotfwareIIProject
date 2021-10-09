@@ -49,4 +49,11 @@ public class ControllerPeliculas {
         model.addAttribute("peliculas", cartelera);
         return "cartelera";
     }
+    
+    @RequestMapping("/search_pelicula")
+    public String buscarPeliculaByTitle(@RequestParam("q") String peliculaTitle, Model model){
+        List<Pelicula> result = peliculaService.searchPeliculaByTitle(peliculaTitle);
+        model.addAttribute("peliculas", result);
+        return "cartelera";
+    }
 }

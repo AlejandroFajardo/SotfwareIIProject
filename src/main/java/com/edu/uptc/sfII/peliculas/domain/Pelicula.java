@@ -17,8 +17,8 @@ import javax.persistence.Table;
 public class Pelicula {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idPelicula;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer idPelicula;
     private String title;
     private String cast;
     private String synopsis;
@@ -43,11 +43,11 @@ public class Pelicula {
         this.urlCaratula = urlCaratula;
     }
     
-    public int getIdPelicula() {
+    public Integer getIdPelicula() {
         return idPelicula;
     }
 
-    public void setIdPelicula(int idPelicula) {
+    public void setIdPelicula(Integer idPelicula) {
         this.idPelicula = idPelicula;
     }
     
