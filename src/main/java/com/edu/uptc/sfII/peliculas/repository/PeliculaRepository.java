@@ -31,5 +31,7 @@ public interface PeliculaRepository extends JpaRepository<Pelicula, Integer> {
 
     @Query("FROM Pelicula p WHERE p.contentRate = ?1")
     public List<Pelicula> findByContentRate(String categoria);
+    
+    
 
 }

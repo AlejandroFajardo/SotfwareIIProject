@@ -115,6 +115,7 @@
                                         <p class="card-text text-center" th:text="${pelicula.duration} + ' Min'"></p>
                                         <p class="card-text bg-dark text-white fit-content mx-auto" id="idioma" th:text="'&nbsp;&nbsp;&nbsp;' + ${pelicula.language} + '&nbsp;&nbsp;&nbsp;'"></p>
                                         <a th:href="@{/eliminar_pelicula(id=${pelicula.idPelicula})}" class="btn btn-primary mt-auto fit-content mx-auto">Eliminar</a>
+                                        <!--<a th:href="@{/edit-movie(id=${pelicula.idPelicula})}" class="btn btn-primary mt-auto fit-content mx-auto">Editar</a>-->
                                     </div>
                                 </div>
                         </div>

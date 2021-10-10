@@ -49,6 +49,9 @@ public class Pelicula {
         return idPelicula;
     }
 
+    public String getGenre() {
+        return genre;
+    }
     public void setIdPelicula(Integer idPelicula) {
         this.idPelicula = idPelicula;
     }

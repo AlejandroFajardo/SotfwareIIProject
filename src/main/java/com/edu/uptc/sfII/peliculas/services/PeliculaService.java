@@ -24,13 +24,13 @@ public class PeliculaService {
         return peliculaRepository.findAll();
     }
     
-    public Optional<Pelicula> getPeliculaPorNombre(Integer id){
+    public Optional<Pelicula> getPeliculaPorID(Integer id){
         return peliculaRepository.findById(id);
     }
     
     public void insertPelicula(String title, String cast, String synopsis,
     int duration, String language, Date premiereDate, String genre, String contentRate,  String urlCaratula){
-        this.peliculaRepository.save(new Pelicula(title, cast, synopsis, duration, language, premiereDate, genre, contentRate, "/img/car.png"));
+        this.peliculaRepository.save(new Pelicula(title, cast, synopsis, duration, language, premiereDate, genre, contentRate, "/img/SHANG-CHI.jpg"));
     }
     
     //Buscar pelicula por titulo

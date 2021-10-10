@@ -12,6 +12,7 @@ import java.awt.image.ImageObserver;
 import java.awt.image.ImageProducer;
 import java.sql.Date;
 import java.util.List;
+import java.util.Optional;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
@@ -48,8 +49,15 @@ public class ControllerPeliculas {
         return "add-movie";
     }
     
+    @RequestMapping("/edit-movie")
+    public String editMovie(@RequestParam("id") int id, Model model){
+        Optional<Pelicula> cartelera = peliculaService.getPeliculaPorID(id);
+        model.addAttribute("peliculaedit", cartelera);
+        return "edit-movie";
+    }
+    
     @RequestMapping("/insert-movie")
-    public String insertMovie( @RequestParam("titulo") String title, @RequestParam("reparto") String cast, @RequestParam("sinopsis") String synopsis,
+    public String insertMovie(@RequestParam("titulo") String title, @RequestParam("reparto") String cast, @RequestParam("sinopsis") String synopsis,
     @RequestParam("duracion") int duration, @RequestParam("idioma") String language, @RequestParam("fecha") Date premiereDate, @RequestParam("genero") String genre, @RequestParam("clasificacion") String contentRate, @RequestParam("myFile") String urlCaratula, Model model){
         peliculaService.insertPelicula(title, cast, synopsis, duration, language, premiereDate, genre, contentRate, urlCaratula);
         List<Pelicula> cartelera = peliculaService.buscarDestacados();
